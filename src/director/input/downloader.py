@@ -82,16 +82,24 @@ def _is_ytdlp_compatible(url: str) -> bool:
 
 
 def _download_ytdlp(url: str, download_dir: Path) -> Path:
-    """Download video via yt-dlp."""
-    output_template = str(download_dir / "reference.%(ext)s")
+    """Download video via yt-dlp.
+
+    Uses the video's own id/title in the output filename to avoid
+    collisions across different URLs (previous `reference.%(ext)s`
+    template caused stale-file reuse bug).
+    """
+    # Use %(id)s so each URL gets its own filename (e.g. C0BG3B7aksU.mp4)
+    output_template = str(download_dir / "%(id)s.%(ext)s")
 
     cmd = [
         "yt-dlp",
         "-f", "bestvideo[height<=720]+bestaudio/best[height<=720]",
         "--merge-output-format", "mp4",
         "-o", output_template,
+        "--force-overwrites",
         "--no-playlist",
         "--no-check-certificates",
+        "--print", "after_move:filepath",
         url,
     ]
 
@@ -108,8 +116,20 @@ def _download_ytdlp(url: str, download_dir: Path) -> Path:
             "yt-dlp not found. Install with: brew install yt-dlp"
         )
 
-    # Find the downloaded file
-    files = list(download_dir.glob("reference.*"))
+    # Prefer the actual filepath yt-dlp printed after move
+    for line in (result.stdout or "").splitlines():
+        line = line.strip()
+        if line and Path(line).exists() and Path(line).suffix.lower() in {".mp4", ".mkv", ".webm", ".mov"}:
+            log.info("Downloaded: %s", Path(line).name)
+            return Path(line)
+
+    # Fallback: find the most recent video in download_dir
+    files = sorted(
+        (p for p in download_dir.glob("*")
+         if p.suffix.lower() in {".mp4", ".mkv", ".webm", ".mov"}),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
     if not files:
         raise RuntimeError(f"yt-dlp produced no output for {url}")
 
