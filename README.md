@@ -3,17 +3,17 @@
 </p>
 
 <p align="center">
-  <a href="https://tzukao.com"><b>tzukao.com</b></a> ·
-  <a href="https://tzukao.com/links">服務入口</a> ·
-  <a href="mailto:keng@tzukao.com">keng@tzukao.com</a>
+  <a href="https://tzukaoltd.com"><b>tzukaoltd.com</b></a> ·
+  <a href="https://tzukaoltd.com/links">服務入口</a> ·
+  <a href="mailto:keng@tzukaoltd.com">keng@tzukaoltd.com</a>
 </p>
 
 <p align="center">
-  <a href="https://tzukao.com">
-    <img src="assets/tzukao-homepage.png" alt="出口影像 tzukao.com" width="90%"/>
+  <a href="https://tzukaoltd.com">
+    <img src="assets/tzukao-homepage.png" alt="出口影像 tzukaoltd.com" width="90%"/>
   </a>
   <br/>
-  <sub><i>關鍵時刻，準時交付 — <a href="https://tzukao.com">tzukao.com</a></i></sub>
+  <sub><i>關鍵時刻，準時交付 — <a href="https://tzukaoltd.com">tzukaoltd.com</a></i></sub>
 </p>
 
 ---
@@ -24,7 +24,7 @@
 
 **適合誰用**：想分析競品、學一支廣告怎麼拍、拿到一支 reference 想反推 prompt 的創作者 / 導演 / 行銷。
 
-> 本工具是 [出口影像](https://tzukao.com) 內部 AI 視覺產線的核心引擎之一，整理成獨立套件分享給同行朋友。
+> 本工具是 [出口影像](https://tzukaoltd.com) 內部 AI 視覺產線的核心引擎之一，整理成獨立套件分享給同行朋友。
 
 ---
 
