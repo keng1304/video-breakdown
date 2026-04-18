@@ -4,6 +4,44 @@
 
 **適合誰用**：想分析競品、學一支廣告怎麼拍、拿到一支 reference 想反推 prompt 的創作者 / 導演 / 行銷。
 
+---
+
+```
+$ video-breakdown analyze "https://www.youtube.com/watch?v=XXXX"
+
+▸ 下載影片...                  ✓ 45.2s / 1920x1080 / 24fps
+▸ 鏡頭切分 (TransNetV2)...     ✓ 偵測到 28 鏡
+▸ 關鍵幀截取...                 ✓ 84 張
+▸ 運鏡分析 (RAFT)...           ✓ pan 9 / static 12 / zoom 4 / handheld 3
+▸ 姿態偵測 (RTMPose)...        ✓ 19 鏡含人，平均 1.4 人
+▸ 色彩指紋 (K-means)...        ✓ 溫暖治癒 / amber / cream
+▸ 音樂結構 (librosa)...         ✓ 76 BPM / intro-verse-drop-outro
+▸ Claude Vision 產 prompt...   ✓ 28 組 Seedance + Kling prompt
+
+分析完成！
+  輸出: output/reference_analysis.json
+  鏡頭: 28  |  Prompt: 28  |  風格: 中速 (12.5 剪/分鐘)
+  費用: $0.87 USD
+```
+
+**輸出範例**（節錄一鏡）：
+```json
+{
+  "shot_index": 3,
+  "start_sec": 8.4,
+  "end_sec": 11.2,
+  "composition": {
+    "shot_size": "medium_close_up",
+    "color_palette": ["#D4A574", "#F5E6D3", "#8B4513"]
+  },
+  "camera_motion": "pan_left",
+  "seedance_prompt": "Medium close-up of a woman's hands adjusting camera dials, warm amber lighting from window-left, shallow depth of field, 35mm lens feel, slow pan left revealing industrial workshop background...",
+  "zh_description": "中近景帶人物雙手調整相機轉盤，窗外暖琥珀光打左側，淺景深，35mm 焦段感，慢慢左搖揭露工業風工作室背景"
+}
+```
+
+---
+
 ## 安裝（一次性）
 
 ### 前置條件

@@ -95,4 +95,3 @@ cd "$VIDEO_BREAKDOWN_ROOT"   # 預設 ~/video-breakdown
 | [workflow/phase4_fingerprint.md](workflow/phase4_fingerprint.md) | 風格指紋邏輯 |
 | [workflow/phase5_prompt.md](workflow/phase5_prompt.md) | Claude Vision + Seedance/Kling 格式 |
 | [tools/cli_usage.md](tools/cli_usage.md) | CLI 指令大全 |
-| [examples/shot_analysis_output.md](examples/shot_analysis_output.md) | 實際輸出範例 |
