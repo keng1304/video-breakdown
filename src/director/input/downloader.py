@@ -143,14 +143,17 @@ def _download_ytdlp(url: str, download_dir: Path) -> Path:
 
 def _download_direct(url: str, download_dir: Path) -> Path:
     """Download a direct video URL via httpx."""
+    import hashlib
     import httpx
 
-    # Guess filename from URL
+    # Guess filename from URL; fall back to URL hash (not a shared literal)
     from urllib.parse import urlparse
     parsed = urlparse(url)
-    filename = Path(parsed.path).name or "reference.mp4"
-    if not any(filename.endswith(ext) for ext in [".mp4", ".mov", ".webm", ".avi"]):
-        filename = "reference.mp4"
+    url_hash = hashlib.sha1(url.encode()).hexdigest()[:10]
+    filename = Path(parsed.path).name
+    valid_exts = (".mp4", ".mov", ".webm", ".avi", ".mkv")
+    if not filename or not any(filename.lower().endswith(ext) for ext in valid_exts):
+        filename = f"{url_hash}.mp4"
 
     output_path = download_dir / filename
     log.info("Downloading direct URL: %s", url)
