@@ -1,8 +1,30 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="出口影像 · video-breakdown" width="100%"/>
+</p>
+
+<p align="center">
+  <a href="https://tzukao.com"><b>tzukao.com</b></a> ·
+  <a href="https://tzukao.com/links">服務入口</a> ·
+  <a href="mailto:keng@tzukao.com">keng@tzukao.com</a>
+</p>
+
+<p align="center">
+  <a href="https://tzukao.com">
+    <img src="assets/tzukao-homepage.png" alt="出口影像 tzukao.com" width="90%"/>
+  </a>
+  <br/>
+  <sub><i>關鍵時刻，準時交付 — <a href="https://tzukao.com">tzukao.com</a></i></sub>
+</p>
+
+---
+
 # video-breakdown
 
 把任何一支影片拆解成可複製的結構化資料 — 鏡頭切分、運鏡軌跡、景別、色彩指紋、音樂結構，最後產出每鏡 Seedance / Kling prompt。
 
 **適合誰用**：想分析競品、學一支廣告怎麼拍、拿到一支 reference 想反推 prompt 的創作者 / 導演 / 行銷。
+
+> 本工具是 [出口影像](https://tzukao.com) 內部 AI 視覺產線的核心引擎之一，整理成獨立套件分享給同行朋友。
 
 ---
 
@@ -131,4 +153,6 @@ Claude Vision（Phase 5）每鏡約 $0.01-0.03 USD。
 
 ## 授權
 
-MIT — 自由使用、修改、散佈。署名 `tzukao.com`。
+MIT — 自由使用、修改、散佈、商用。唯一請求：保留 README 的署名連結（幫我們被更多需要的人找到）。
+
+完整條款見 [LICENSE](LICENSE)。

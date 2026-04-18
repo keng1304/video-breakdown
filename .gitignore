@@ -19,7 +19,7 @@ wheels/
 
 # uv
 .uv/
-uv.lock
+# 註：uv.lock 必須 commit — 保證下游可重現安裝
 
 # Models（首次執行自動從 Hugging Face / torch hub 下載到 ~/.cache/）
 models/
